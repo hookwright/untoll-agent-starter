@@ -1,0 +1,12 @@
+{
+  "name": "trade-through-router",
+  "summary": "The case that needs care, as a worked example. One router, one swap, and the recipient argument named so an in-scope swap cannot be redirected. The signature here is illustrative: replace it with your router's real one and count its arguments before minting, because recipientArg is 1-based and the delegate reads a fixed calldata word. Needs UNTOLL_ROUTER.",
+  "targets": ["@router"],
+  "calls": [{ "signature": "swap(address,address,uint256,address)", "recipientArg": 4 }],
+  "recipients": ["@owner"],
+  "perTxCapWei": "50000000000000000",
+  "perEpochCapWei": "200000000000000000",
+  "epochLengthSeconds": "3600",
+  "expiresInSeconds": "7200",
+  "allowUnconstrainedRecipients": false
+}

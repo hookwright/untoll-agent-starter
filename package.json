@@ -1,0 +1,38 @@
+{
+  "name": "untoll-agent-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fork this to run an autonomous agent on UNTOLL with a key whose authority is confined by contract bytecode. Typed SDK plus a reference agent.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "onboard": "node --experimental-strip-types scripts/onboard.ts",
+    "selftest": "node --experimental-strip-types scripts/selftest.ts",
+    "privy-selftest": "node --experimental-strip-types scripts/privy-selftest.ts",
+    "mcp-selftest": "node --experimental-strip-types scripts/mcp-selftest.ts",
+    "mcp-smoke": "node --experimental-strip-types scripts/mcp-smoke.ts",
+    "check": "npm run typecheck && npm run selftest && npm run onboard-selftest && npm run privy-selftest && npm run mcp-selftest && npm run mcp-smoke && npm run agent-account-selftest",
+    "agent": "node --experimental-strip-types agent/run.ts",
+    "mcp": "node --experimental-strip-types mcp/server.ts",
+    "onboard-selftest": "node --experimental-strip-types scripts/onboard-selftest.ts",
+    "agent-account-mined-refusals": "node --experimental-strip-types scripts/agent-account-mined-refusals.ts",
+    "agent-account-selftest": "node --experimental-strip-types --test scripts/agent-account-selftest.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "viem": "^2.55.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.8.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untolling/untoll-agent-starter.git"
+  },
+  "homepage": "https://github.com/untolling/untoll-agent-starter#readme"
+}

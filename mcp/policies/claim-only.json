@@ -1,0 +1,16 @@
+{
+  "name": "claim-only",
+  "summary": "Settle what a pool owes, and do nothing else. One target, three pull-based claims that pay the caller, zero value caps.",
+  "targets": ["@launchHook"],
+  "calls": [
+    { "signature": "claimRewards(bytes32,uint256)" },
+    { "signature": "claimRewardsRange(bytes32,uint256,uint256)" },
+    { "signature": "claimCreatorFee(bytes32)" }
+  ],
+  "recipients": ["@owner"],
+  "perTxCapWei": "0",
+  "perEpochCapWei": "0",
+  "epochLengthSeconds": "3600",
+  "expiresInSeconds": "86400",
+  "allowUnconstrainedRecipients": false
+}
